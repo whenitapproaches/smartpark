@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartpark</title>
+    <link rel="stylesheet" href="css/app.bundle.css" type="text/css">
+</head>
+
+<body>
+    <div id="page">
+        <div class="navbar--top">
+            <div class="columns is-gapless is-fullwidth is-vcentered">
+                <div class="column is-narrow">
+                    <div class="logo">
+                        <a class="is-flex" href="/"><img src="svgs/logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="column is-narrow nav">
+                    <ul>
+                        <li><a <% if(activePage == 'home') {%>class="is-active" <%}%>href="/">MAP</a></li>
+                        <li><a <% if(activePage == 'cars') {%>class="is-active" <%}%>href="/cars">CARS</a></li>
+                        <li><a <% if(activePage == 'history') {%>class="is-active" <%}%>href="/history">HISTORY</a></li>
+                        <li><a <% if(activePage == 'settings') {%>class="is-active" <%}%>href="/settings">SETTINGS</a></li>
+                        <li><a href="/user/signout">SIGN OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main columns is-gapless">
+            <div class="column is-6">
+                <div class="map">
+                    <div class="map__content">
+                        <div class="columns row">
+                            <div class="column is-3">
+                                <div data-slot="A1" class="slot<% if(!slots.includes("A1")) {%> is-empty<%}%>">A1</div>
+                            </div>
+                            <div class="column is-3">
+                                <div data-slot="A2" class="slot<% if(!slots.includes("A2")) {%> is-empty<%}%>">A2</div>
+                            </div>
+                            <div class="column is-3">
+                                <div data-slot="A3" class="slot<% if(!slots.includes("A3")) {%> is-empty<%}%>">A3</div>
+                            </div>
+                            <div class="column is-3">
+                            <div data-slot="A4" class="slot<% if(!slots.includes("A4")) {%> is-empty<%}%>">A4</div>
+                            </div>
+                        </div>
+                        <div class="columns row">
+                            <div class="column is-3">
+                                <div data-slot="B1" class="slot<% if(!slots.includes("B1")) {%> is-empty<%}%>">B1</div>
+                            </div>
+                            <div class="column is-3">
+                                <div data-slot="B2" class="slot<% if(!slots.includes("B2")) {%> is-empty<%}%>">B2</div>
+                            </div>
+                            <div class="column is-3">
+                                <div data-slot="B3" class="slot<% if(!slots.includes("B3")) {%> is-empty<%}%>">B3</div>
+                            </div>
+                            <div class="column is-3">
+                                <div data-slot="B4" class="slot<% if(!slots.includes("B4")) {%> is-empty<%}%>">B4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="carInfo" class="column is-4 hidden">
+                <div class="columns is-multiline">
+                    <div class="column is-12">
+                        <div class="owner-card">
+                            <div class="owner-card__content">
+                                <div class="columns is-gapless is-marginless">
+                                    <div class="column is-narrow">
+                                        <ul>
+                                            <li>Owner:</li>
+                                            <li>Car Model:</li>
+                                            <li>Car Numberplate:</li>
+                                            <li>Membership:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="column has-text-right">
+                                        <ul>
+                                            <li id="owner__owner"></li>
+                                            <li id="owner__model"></li>
+                                            <li id="owner__plate"></li>
+                                            <li id="owner__membership"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-logo">
+                                <img src="svgs/car.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-12">
+                        <div class="info-card">
+                            <div class="info-card__content">
+                                <h2 id="info__slot"></h2>
+                                <div class="columns is-gapless is-marginless">
+                                    <div class="column is-narrow">
+                                        <ul>
+                                            <li>Last Leaving:</li>
+                                            <li>Parking Date:</li>
+                                            <li>Parking Time Elapsed:</li>
+                                            <li>Parking Fee:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="column has-text-right">
+                                        <ul>
+                                            <li id="info__lastLeaving"></li>
+                                            <li id="info__lastEntering"></li>
+                                            <li id="info__timeElapsed"></li>
+                                            <li id="info__parkingFee"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file has-name">
+                                <label class="file-label">
+                                  <input id="uploader" name="files" class="file-input" type="file">
+                                  <span class="file-cta">
+                                    <span class="file-icon">
+                                      <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                      Choose a file…
+                                    </span>
+                                  </span>
+                                  <span class="file-name">
+                                    Screen Shot 2017-07-29 at 15.54.25.png
+                                  </span>
+                                </label>
+                              </div>
+                              <div id="result" class="result">0319239120</div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>

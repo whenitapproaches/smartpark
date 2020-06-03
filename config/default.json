@@ -1,0 +1,18 @@
+{   
+    "URL": {
+        "home": "http://localhost:3000"
+    },
+    "privateKey": "doanlthtvdk",
+    "port": 3000,
+    "user": {
+        "session_time": 3600000
+    },
+    "GMT": 0,
+    "app": {
+        "price": {
+            "premium": 200,
+            "basic": 300
+        },
+        "currency": "VND"
+    }
+}

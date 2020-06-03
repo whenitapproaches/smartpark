@@ -1,0 +1,394 @@
+@import '../../node_modules/bulma/bulma.sass';
+$fi-font-path: "../fonts/";
+@import '../../node_modules/fontisto/sass/fontisto/fontisto.scss';
+
+$blue: #3772FF;
+$green: #9FD356;
+$red: #DF2935;
+
+@font-face {
+  font-family: 'NATS' !important;
+  src: url('../font/NATS-Regular.ttf') format('truetype');
+}
+
+%box-shadow {
+  box-shadow: 10px 10px 0px rgba(55,114,255,0.17);
+}
+%box-shadow-red {
+  box-shadow: 10px 10px 0px rgba(223,41,53,0.17);
+}
+%box-shadow-green {
+  box-shadow: 10px 10px 0px rgba(159,211,86,0.17);
+}
+%box-shadow-white {
+  box-shadow: 10px 10px 0px rgba(255,255,255,0.17);
+}
+
+html {
+  font-size: 14px;
+  font-family: 'NATS';
+}
+
+#page {
+  width: 100%;
+  height: 100vh;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: flex;
+  padding: 60px 120px;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.map {
+  background-color: $blue;
+  display: flex;
+  padding: 30px;
+  border-radius: 30px;
+  @extend %box-shadow;
+  &__content {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .row {
+    height: 50%;
+    width: 100%;
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
+  .slot {
+    background-color: $red;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px 20px;
+    @extend %box-shadow-red;
+    min-height: 200px;
+    cursor: pointer;
+    transition: .2s ease;
+    &:hover {
+      transform: scale(1.2)
+    }
+    &.is-empty {
+      background-color: $green;
+      @extend %box-shadow-green;
+    }
+    &.is-chosen {
+      transform: scale(1.2)
+    }
+  }
+}
+
+.owner-card {
+  background-color: $blue;
+  border-radius: 15px;
+  position: relative;
+  @extend %box-shadow;
+  li {
+    white-space: nowrap;
+    font-size: 1.6rem;
+    color: white;
+    line-height: 38px;
+    min-height: 38px;
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+  }
+  .bg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    padding: 50px;
+    height: 100%;
+    text-align: center;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.navbar--top {
+  width: calc(100% + 10px);
+  padding: 20px;
+  padding-left: 130px;
+  padding-right: 120px;
+  margin-left: -10px;
+  background-color: $blue;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @extend %box-shadow;
+  height: 90px;
+  .logo {
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.owner-card, .info-card {
+  padding: 15px 30px;
+}
+
+.info-card {
+  background-color: $blue;
+  width: 100%;
+  border-radius: 15px;
+  @extend %box-shadow;
+  li {
+    white-space: nowrap;
+    font-size: 1.6rem;
+    color: white;
+    line-height: 38px;
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+  }
+}
+
+.result {
+  font-size: 2rem;
+  color: white;
+}
+
+.login {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $blue;
+  &__panel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  &__body {
+    padding: 40px 10px 10px;
+    button {
+      background-color: $blue;
+      color: white;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      &:hover {
+        background-color: #5185ff;
+        color: white;
+      }
+      font-size: 1.5rem;
+    }
+    .error {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: $red;
+      color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+    }
+    input {
+      font-size: 1.5rem;
+    }
+  }
+  &__header {
+    background-color: $blue;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.page404 {
+  background-color: $blue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__panel {
+    text-align: center;
+    h2 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 3px 3px 0 rgba(255,255,255, 0.2);
+      margin-bottom: 10px;
+    }
+    .button {
+      background-color: white;
+      font-size: 1.5rem;
+      padding: 5px 15px;
+      height: auto;
+      border: none;
+      @extend %box-shadow-white
+    }
+
+
+  }
+}
+
+.nav {
+  margin-left: auto !important;
+  ul {
+    display: flex;
+    li {
+      padding: 0 10px;
+      a {
+        font-size: 1.5rem;
+        color: white;
+        display: flex;
+        padding: 5px 15px;
+        border-radius: 10px;
+        &.is-active {
+          background-color: white;
+          color: $blue;
+        }
+      }
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+#carInfo {
+  opacity: 1;
+  transition: .2s ease;
+}
+
+#carInfo.hidden {
+  opacity: 0;
+}
+
+#info__slot {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.table {
+  font-size: 1.5rem;
+}
+
+.notification {
+  position: fixed;
+  bottom: 50px;
+  right: 120px;
+  min-width: 200px;
+  opacity: 0;
+  font-size: 1.5rem;
+  transition: .3s ease;
+  padding: 10px 30px;
+  animation: notificationOff .3s forwards;
+  &.is-active {
+    animation: notificationOn .3s forwards;
+  }
+  &.is-success {
+    @extend %box-shadow-green;
+  }
+  &.is-danger {
+    @extend %box-shadow-red;
+  }
+}
+
+@keyframes notificationOn {
+  0% {
+    opacity: 0;
+    z-index: 1;
+  }
+  99% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+@keyframes notificationOff {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#isParkingOptions {
+  color: #363636;
+}
+
+.settings {
+  label {
+    font-size: 2rem;
+  }
+  input, button {
+    font-size: 1.25rem;
+  }
+}
+
+.modal {
+  &-background {
+    opacity: 0.5;
+  }
+  &-card {
+    width: auto;
+    &-head {
+      text-align: center;
+      p {
+        font-size: 2rem;
+      }
+      padding: 30px 60px 20px;
+      border: none;
+    }
+    &-foot {
+      display: flex;
+      justify-content: center;
+      padding: 20px 60px 30px;
+      border: none;
+      button:not(:last-child) {
+        margin-right: 3rem !important;
+      }
+    }
+  }
+}
+
+.search {
+  width: 25%;
+  margin-left: auto;
+  margin-bottom: 15px;
+}

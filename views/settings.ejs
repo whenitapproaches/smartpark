@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartpark</title>
+    <link rel="stylesheet" href="css/app.bundle.css" type="text/css">
+</head>
+<body>
+    <div id="page">
+        <div class="navbar--top">
+            <div class="columns is-gapless is-fullwidth is-vcentered">
+                <div class="column is-narrow">
+                    <div class="logo">
+                        <a class="is-flex" href="/"><img src="svgs/logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="column is-narrow nav">
+                    <ul>
+                        <li><a <% if(activePage == 'home') {%>class="is-active" <%}%>href="/">MAP</a></li>
+                        <li><a <% if(activePage == 'cars') {%>class="is-active" <%}%>href="/cars">CARS</a></li>
+                        <li><a <% if(activePage == 'history') {%>class="is-active" <%}%>href="/history">HISTORY</a></li>
+                        <li><a <% if(activePage == 'settings') {%>class="is-active" <%}%>href="/settings">SETTINGS</a></li>
+                        <li><a href="/user/signout">SIGN OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main columns is-gapless">
+            <div class="settings is-fullwidth">
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label">Premium Price (.per min)</label>
+                            <div class="control">
+                              <input class="input" type="text" name="premiumPrice" value="">
+                            </div>
+                          </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label">Basic Price (.per min)</label>
+                            <div class="control">
+                              <input class="input" type="text" name="basicPrice" value="">
+                            </div>
+                          </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label">Currency</label>
+                            <div class="control">
+                              <input class="input" type="text" name="currency" value="">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label">Session Time (min)</label>
+                            <div class="control">
+                              <input class="input" type="text" name="sessionTimeout" value="">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                  
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-link">Submit</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification">Error</div>
+    <script src="js/setting.js"></script>
+</body>
+</html>

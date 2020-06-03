@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartpark</title>
+    <link rel="stylesheet" href="css/app.bundle.css" type="text/css">
+</head>
+
+<body>
+    <div id="page">
+        <div class="navbar--top">
+            <div class="columns is-gapless is-fullwidth is-vcentered">
+                <div class="column is-narrow">
+                    <div class="logo">
+                        <a class="is-flex" href="/"><img src="svgs/logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="column is-narrow nav">
+                    <ul>
+                        <li><a <% if(activePage == 'home') {%>class="is-active" <%}%>href="/">MAP</a></li>
+                        <li><a <% if(activePage == 'cars') {%>class="is-active" <%}%>href="/cars">CARS</a></li>
+                        <li><a <% if(activePage == 'history') {%>class="is-active" <%}%>href="/history">HISTORY</a></li>
+                        <li><a <% if(activePage == 'settings') {%>class="is-active" <%}%>href="/settings">SETTINGS</a></li>
+                        <li><a href="/user/signout">SIGN OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main columns is-gapless is-multiline">
+            <div class="column is-12">
+                <div class="search">
+                    <div class="control has-icons-left">
+                        <input id="search" class="input" type="text" value="" placeholder="What are you looking for?">
+                        <span class="icon is-left">
+                            <i class="fi fi-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="table is-fullwidth is-striped is-narrow">
+                        <thead>
+                          <tr>
+                            <th>Numberplate</th>
+                            <th>Model</th>
+                            <th>Owner</th>
+                            <th>Membership</th>
+                            <th>Last Entering</th>
+                            <th>Last Leaving</th>
+                            <th><a id="isParkingOptions" class="has-text-info" href="#">Is Parking?<input type="hidden" value="2"></a></th>
+                            <th>Slot</th>
+                            <th><i class="fas fa-trash-alt"></i></th>
+                            <th></th>
+                            <th></th>
+                            <th><button class="button is-primary refresh"><span class="icon"><i class="fi fi-spinner-refresh"></i></span></button></th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbodyCars">
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="notification">Error</div>
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Are you sure?</p>
+                    </header>
+                    <footer class="modal-card-foot">
+                        <button class="button confirm is-success">Confirm</button>
+                        <button class="button cancel">Cancel</button>
+                      </footer>
+                </div>
+
+              </div>
+
+    <script src="js/car.js"></script>
+    <script src="https://use.fontawesome.com/e3937e593e.js"></script>
+</body>
+</html>

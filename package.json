@@ -1,0 +1,43 @@
+{
+  "name": "smartpark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "bulma": "^0.8.2",
+    "config": "^3.3.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fontisto": "^3.0.4",
+    "form-data": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "reset-css": "^5.0.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "tesseract.js": "^2.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "sass": "node-sass -w --output-style=compressed resources/scss/app.scss public/css/app.bundle.css --usePolling",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartpark</title>
+    <link rel="stylesheet" href="css/app.bundle.css" type="text/css">
+</head>
+
+<body>
+    <div id="page">
+        <div class="login">
+            <div class="login__panel column is-4">
+                <div class="login__header">
+                    <img src="svgs/logo.svg" alt="">
+                </div>
+                <div class="login__body">
+                    <% if(messages != '') { %>
+                        <h2 class="error"><%= messages %></h2>
+                    <% } %>
+                    <form action="http://localhost:3000/user/authentication" method="POST">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" name="username" placeholder="Username">
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="password" name="password" placeholder="Password">
+                            </p>
+                        </div>
+                        <div class="field has-addons has-addons-centered">
+                            <p class="control is-fullwidth">
+                                <button class="button is-fullwidth">
+                                    Login
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
